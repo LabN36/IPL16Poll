@@ -8,7 +8,7 @@ var flash = require('connect-flash');
 var morgan = require('morgan');
 var request = require('request');
 var moment = require('moment');
-var configDB = require('./public/dataBase/database.js');
+var configDB = require('./public/database/database.js');
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
                 replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
 mongoose.connect(configDB.url,options);
