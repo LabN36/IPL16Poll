@@ -24,7 +24,7 @@ var sendgrid = require("sendgrid")('SG.YATGaswpSG-N7MGjSvbVFg.OtyCXv8147FXrwpK6q
 var email = new sendgrid.Email();
 //get the exported MongoDB collection
 var User = require('./public/database/user.js');
-var MatchList = require('./public/database/MatchList.js');
+var MatchList = require('./public/database/Matchlist.js');
 var PredictionList = require('./public/database/predictionList.js');
 var port = process.env.PORT || 8000;
 var app = express();
