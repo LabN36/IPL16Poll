@@ -1,0 +1,58 @@
+<!--<!DOCTYPE html>
+<html lang="en" >
+<head >
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Project X</title>
+        <!--Angular Files-->
+        <script type="text/javascript" src="../resources/angular.js"></script>
+        <script type="text/javascript" src="../resources/angular-ui-router.js"></script>
+        <script type="text/javascript" src="../resources/angular-animate.js"></script>
+        <script type="text/javascript" src="../resources/angular-aria.js"></script>
+        <script type="text/javascript" src="../resources/angular-material.js"></script>
+        <script type="text/javascript" src="../resources/angular-messages.js"></script>
+        <script type="text/javascript" src="../resources/socket.io.js"></script>
+        <!--Main Angular File-->
+        <script src="../angular/angularApp-alpha.js"></script>
+        <script src="../angular/indexCtrl.js"></script>
+
+        <!--For Map Integration -->
+        <!--<script type="text/javascript" src="../resources/ng-map.min.js"></script>-->
+        <!--<script src="http://maps.google.com/maps/api/js"></script>-->
+
+        <!--CSS Files Bootstrap + Angular Material-->
+        <link rel="stylesheet" href="../resources/angular-material.css">
+        <link rel="stylesheet" href="../resources/bootstrap_paper.min.css">
+
+        <script src="../resources/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../resources/bootstrap.js"></script>
+       
+
+</head>
+<body ng-app="angularApp"  layout="column" >  
+
+<!--Body starts right hear-->
+    <md-toolbar layout="row">
+        <md-button class="menu" ng-click="vm.toggleList()" hide-gt-sm  >
+            <md-icon md-svg-src="../images/ic_menu_white_24px.svg"></md-icon>
+        </md-button>
+    </md-toolbar>
+    <div id="mainContent" layout="row" flex  >
+        <md-sidenav layout="column"   md-component-id="left" flex="15"  class="md-whiteframe-z2 " md-is-locked-open="$mdMedia('gt-sm')" >
+            <md-button class="md-raised" ui-sref=".home">Home</md-button>
+            <md-button class="md-raised" ui-sref=".predict">Prdict</md-button>
+            
+            <!--<md-button class="md-raised" ng-click="about(6)">Tech Quiz <span class="label label-info">alpha</span></md-button>-->
+        </md-sidenav>
+        <md-content id="content" style="padding:2%;" flex>
+            <div ui-view > 
+                
+            </div>
+            
+            
+        </md-content>
+    </div>
+<!--</div>-->
+</body>
+</html>
+

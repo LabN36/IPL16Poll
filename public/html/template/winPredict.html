@@ -1,0 +1,51 @@
+<div  ng-controller="predictCtrl" class=" col-md-10" style="height:260px" ng-init="getMatchList()">
+    <!--<md-progress-circular md-mode="indeterminate" ng-show="isLoading" ></md-progress-circular>-->
+    <!--{{adds}}-->
+    <h3>Predict the Winning team...</h3>
+<md-tabs md-dynamic-height md-border-bottom md-selected="2">
+    <md-tab label="Todays Match">
+        <md-content class="md-padding" style="height:500px">
+            <div ng-repeat="team in teams" >
+           
+  <md-button class="{{teamaColor}}" ng-click="changeColor()">{{team.teama}}</md-button>
+  <md-button class="{{teambColor}}" ng-click="changeColor()">{{team.teamb}}</md-button>
+                    <!--<md-checkbox ng-model="!teama"><h4> {{team.teamb}}</h4></md-checkbox>   -->
+                    
+            <md-slider-container >
+      <md-slider ng-model="disabled"  md-discrete step="2"  min="0" max="100"></md-slider>
+<md-button class="btn btn-warning" ng-click="submitPoll(disabled)">Poll</md-button> 
+    </md-slider-container>
+            </div>
+        </md-content>{{resMessage}}
+    </md-tab>
+    
+    <md-tab label="Fill Entry">
+        <md-content class="md-padding">
+    <md-input-container class="md-col-3" >
+            <label>team A</label>
+            <md-select ng-model="putValue.teama">
+              <md-option ng-repeat="team in teams1" value="{{team}}">
+                {{team}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+    <md-input-container class="md-col-3" >
+            <label>team B</label>
+            <md-select ng-model="putValue.teamb">
+              <md-option ng-repeat="team in teams1" value="{{team}}">
+                {{team}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+         </md-content>
+         <md-button class="md-raised" ng-click="saveMatchDetail(putValue)">Save</md-button>
+        request{{putValue}}
+        <md-switch ng-model="data.cb1" aria-label="Who will win" ng-true-value="'team A win'" ng-false-value="'team B win'">
+        Switch 1: {{ data.cb1 }}
+        </md-switch>
+    </md-tab>
+      
+</md-tabs>    
+</div>
+
+        

@@ -1,0 +1,25 @@
+    <!--Login Div -->
+        <div ng-show="true" class="row" style="margin-top:3%"  >
+            <div class="md-whiteframe-z4 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8" layout="column"  >
+                    <form name="loginform" layout="column" ng-submit="Ajaxlogin()" novalidate>
+                        <md-input-container style="margin-top:30px">   
+                            <label>Email{{logindata.username}}</label>
+                            <input type="email" name="username" ng-model="logindata.username" ng-required="true" style="margin:bottom:0px" />
+                            <div class="help-block" ng-messages="loginform.username.$error" ng-show="loginform.username.$touched" >
+                                <p ng-message="required">field is required.</p>
+                                <p ng-message="email">field must be email.</p>
+                            </div>  
+                        </md-input-container>
+                        <md-input-container style="margin-top:0px">
+                            <label>Password</label>
+                            <input type="password" ng-model="logindata.password" name="password" ng-required="true"/>
+                            <div class="help-block" ng-messages="loginform.password.$error" ng-show="loginform.password.$touched" >
+                               <p ng-message="required">password is required.</p>
+                            </div>
+                        </md-input-container>
+                        <div ng-show="getMessage()" class="alert alert-warning">{{message}}</div>
+                        <button style="margin-bottom:30px" class="btn btn-success" ng-disabled="loginform.$invalid" type="submit" >Call Login Ajax Method ;)
+                        </button>
+                    </form>
+            </div>
+        </div> 

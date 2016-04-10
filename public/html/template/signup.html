@@ -1,0 +1,34 @@
+        <!--Signup Div-->
+        <div ng-show="true" class="row" style="margin-top:3%" >
+            <div class="md-whiteframe-z4 col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8" layout="column"  >
+                <form  name="signupform" layout="column" ng-submit="AjaxSignup()" novalidate>
+                    <md-input-container style="margin-top:30px">   
+                        <label>Email{{signupdata.username}}</label>
+                        <input type="email" ng-model="signupdata.username" name="username" ng-required="true" />
+                        <div class="help-block" ng-messages="signupform.username.$error" ng-show="signupform.username.$touched" >
+                            <p ng-message="required">email is required.</p>
+                            <p ng-message="email">field must be email.</p>
+                        </div>  
+                    </md-input-container>
+                    <md-input-container style="margin-top:0px">
+                        <label>Password</label>
+                        <input type="password" ng-model="signupdata.password" name="password" ng-required="true"/>
+                        <div class="help-block" ng-messages="signupform.password.$error" ng-show="signupform.password.$touched" >
+                            <p ng-message="required">password is required.</p>
+                        </div>  
+                    </md-input-container>
+                    <md-input-container style="margin-top:0px">
+                        <label>Confirm Password</label>
+                        <input type="password" ng-model="signupdata.confirmpassword" name="confirmpassword" ng-required="true" compare-to="signupdata.password"/>
+                        <div class="help-block" ng-messages="signupform.confirmpassword.$error" ng-show="signupform.confirmpassword.$touched" >
+                            <p ng-message="required">confirm Password is required.</p>
+                                <p ng-message="compareTo">password does not match.</p>
+                        </div>
+                    </md-input-container>
+                    <div ng-show="getSignupMessage()" class="alert alert-warning">{{SignupMessage}}</div>                    
+                    <button style="margin-bottom:30px" class="btn btn-info" ng-disabled="signupform.$invalid" type="submit">signup
+                    </button>
+                </form>
+            </div>
+        </div>
+        
